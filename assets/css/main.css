@@ -8601,3 +8601,77 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+		.image .pdf-embed {
+			width: 100%;
+			height: 65vh;
+			min-height: 360px;
+			max-height: 900px;
+			border: 0;
+			border-radius: 8px;
+			box-shadow: 0 8px 24psx rgba(0,0,0,.15);
+		}
+
+		#third .image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+		}
+
+		#third .video-embed {
+			width: 100%;
+			max-width: 960px;
+			aspect-ratio: 16 / 9;
+			background: #000;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+
+		#third .video-embed iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		/* Fallback for older browsers without aspect-ratio support */
+		@supports not (aspect-ratio: 16/9) {
+			#third .video-embed { position: relative; padding-top: 56.25%; }
+			#third .video-embed iframe { position: absolute; top: 0; left: 0; }
+		}
+		/* If you also want the panel behind the video darker */
+		#third .image { background: #33353d; border-radius: 8px; padding: 16px; }
+
+		/* ---- PPTX embed (Void slides) ---- */
+		#slides .image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		}
+
+		.pptx-embed {
+		width: 100%;
+		max-width: 960px;
+		aspect-ratio: 16 / 9;
+		background: #0e0f12;
+		border-radius: 6px;
+		overflow: hidden;
+		}
+
+		.pptx-embed iframe {
+		width: 100%;
+		height: 100%;
+		border: 0;
+		display: block;
+		}
+
+		@supports not (aspect-ratio: 16/9) {
+		.pptx-embed { position: relative; padding-top: 56.25%; }
+		.pptx-embed iframe { position: absolute; inset: 0; height: 100%; }
+		}
+
+		/* Minor UI bits */
+		.link-muted { font-size: 0.95rem; opacity: .75; }
+		.link-muted:hover { opacity: 1; text-decoration: underline; }
+		.hint { font-size: 0.9rem; opacity: .7; margin-top: .75rem; }
+
